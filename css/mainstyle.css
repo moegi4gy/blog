@@ -7,11 +7,17 @@ html {
 body {
   background-color: #fafbf9;
   overflow-y: hidden;
+  padding: 0;
+  margin: 0;
   }
 
 h1 {
   margin: 0;
   margin-top: 10px;
+  }
+
+p {
+  line-height: 16px;
   }
 
 /* ヘッダー */
@@ -25,11 +31,17 @@ h1 {
   background-color: #fafbf9;
   margin: 0;
   z-index: 100;
+  
+  & a {
+    text-decoration: none;
+    color: #0a2933;
+    }
   }
 
 /* ハンバーガーメニュー */
 
 #hamburger-menu {
+  display: none;
   position: absolute;
   top: 0;
   right: 0;
@@ -56,8 +68,61 @@ h1 {
     }
   }
 
+/* トップ画像 */
+
+#top-content {
+  width: 100%;
+  height: 70dvh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  }
+
 #top-image {
   width: 100%;
   margin: 0;
   padding: 0;
   }
+
+#top-content-list {
+  z-index: 50;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 0;
+  text-align: center;
+  
+  & a li {
+    display: inline-block;
+    list-style-type: none;
+    background-color: rgba(255, 255, 255, 0.65);
+    width: 120px;
+    margin: 20px;
+    padding: 5px 20px;
+    text-align: center;
+    
+    &:hover {
+      padding: 10px 25px;
+      margin: 15px;
+      }
+    
+    & span {
+      font-weight: 500;
+      font-size: 20px;
+      margin: 0;
+      }
+      
+    & p {
+      margin: 0;
+      font-size: 14px;
+      line-height: 18px;
+      color: #404040;
+      }
+    }
+  }
+
+#readme {
+  padding: 0 15px;
+  text-align: center;
+  }
+
