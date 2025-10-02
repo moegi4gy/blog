@@ -23,6 +23,9 @@
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
  
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+ 
 </head>
 
 <body>
@@ -36,8 +39,9 @@
  </a>
  
  <div id="hamburger-menu">
-  <label for="hamburger-display">≡</label>
+  <label for="hamburger-display">≡</label> 
   
+  <input id="hamburger-display" type="checkbox" name="hamburger-menu" value="hamburger-menu">
   <ul>
    <li>架空鉄道</li>
    <li>空想都市</li>
@@ -46,7 +50,6 @@
    <li>リンク</li>
   </ul>
  </div>
- 
 </div>
 
 </header>
@@ -58,35 +61,35 @@
  
  <ul id="top-content-list">
  
-   <a>
+   <a href="railway">
     <li>
      <span>架空鉄道</span>
      <p>RAILWAY</p>
     </li>
    </a>
    
-   <a>
+   <a href="city">
     <li>
      <span>空想都市</span>
      <p>CITY</p>
     </li>
    </a>
    
-   <a>
+   <a href="blog">
     <li>
      <span>旅行記</span>
      <p>BLOG</p>
     </li>
    </a>
   
-   <a>
+   <a href="tool">
     <li>
      <span>ツール</span>
      <p>TOOL</p>
     </li>
    </a>
   
-   <a>
+   <a href="link">
     <li>
      <span>リンク</span>
      <p>LINK</p>
@@ -100,29 +103,49 @@
 <div id="readme">
  <p>今までに制作した架空鉄道や空想都市についてまとめたり、あちこちと飛びまわった旅の記録をしたりしています。</p>
  <p>ちなみにトップ画像はJR西日本・和歌山線五条駅で2025年に撮影したものです。</p>
- <p>＜注意＞ 初めてサイトをご覧になる方はまず<a>このサイトについて</a>をお読みください。</p>
+ <p>＜注意＞ 初めてサイトをご覧になる方はまず<a href="about">このサイトについて</a>をお読みください。</p>
 </div>
 
-<h2>作者について</h2>
+<div class="h2-space">
+ <h2>作者について</h2>
+ <div class="h2-line"></div>
+</div>
 
-<dl>
+<dl class="author-introduce">
 
- <dt>つくだに</dt>
- <dd>旅行が大好きなクリエイター。</dd>
+ <img src="img/mainlogo.jpeg" class="logoimage">
+ <dt>すずらん</dt>
+ <dd>旅行が大好きなクリエイター。架空の都市や鉄道をつくります。</dd>
+ <dd>名前は北の大地を駆け抜ける某特急から取りました。</dd>
  
 </dl>
 
-<p>「式敷みどり」名義の活動（音楽・イラスト等）については<a href="https://youtube.com/@moegi4gy">こちら</a>にどうぞ。</p>
+<p style="margin-left: 20px;">▶︎ 「式敷みどり」名義の活動（音楽・イラスト等）については<a href="https://x.com/moegi4gy">こちら</a>にどうぞ。（Xに飛びます）</p>
 
-<h2>更新履歴</h2>
+<div class="h2-space">
+ <h2>更新履歴</h2>
+ <div class="h2-line"></div>
+</div>
+
+<ul id="history-list">
+ <li>
+  <span>2025-09-03</span>
+  <p>ホームページを正式に公開。</p>
+ </li>
+ 
+ <a href="history">全ての履歴を見る</a>
+</ul>
 
 </main>
 
 <footer>
 
-<ul>
- <li><a href="https://x.com/moegi822tw"><img alt="X"></a></li>
-</ul>
+<div id="footer">
+ <a href="https://twitter.com/moegi822tw?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @moegi822tw</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<div>Copyright ©︎ 2025 Shikijiki Midori All rights reserved.</div>
+
+</div>
 
 </footer>
 
