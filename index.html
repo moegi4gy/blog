@@ -31,10 +31,12 @@
 <body>
 
 <header>
-<div id="top-header">
+
+  <!--#include file="include/header.html" -->
+  <div id="top-header">
  
  <a href="https://moegi4gy.github.io/blog/">
-  <h1>旧駅舎裏の資材置き場</h1>
+  <div id="site-title">旧駅舎裏の資材置き場</div>
   <div>〜架空鉄道・架空地図の部屋〜</div>
  </a>
  
@@ -43,11 +45,42 @@
   
   <input id="hamburger-display" type="checkbox" name="hamburger-menu" value="hamburger-menu">
   <ul>
-   <li>架空鉄道</li>
-   <li>空想都市</li>
-   <li>旅行記</li>
-   <li>ツール</li>
-   <li>リンク</li>
+   
+   <a href="railway">
+    <li>
+     <span>架空鉄道</span>
+     <p>RAILWAY</p>
+    </li>
+   </a>
+   
+   <a href="city">
+    <li>
+     <span>空想都市</span>
+     <p>CITY</p>
+    </li>
+   </a>
+   
+   <a href="blog">
+    <li>
+     <span>旅行記</span>
+     <p>BLOG</p>
+    </li>
+   </a>
+  
+   <a href="tool">
+    <li>
+     <span>ツール</span>
+     <p>TOOL</p>
+    </li>
+   </a>
+  
+   <a href="link">
+    <li>
+     <span>リンク</span>
+     <p>LINK</p>
+    </li>
+   </a>
+   
   </ul>
  </div>
 </div>
@@ -129,7 +162,7 @@
 
 <ul id="history-list">
  <li>
-  <span>2025-09-03</span>
+  <span>2026-04-01</span>
   <p>ホームページを正式に公開。</p>
  </li>
  
@@ -140,8 +173,50 @@
 
 <footer>
 
+ <!--#include file="include/footer.html" -->
+
 <div id="footer">
  <a href="https://twitter.com/moegi822tw?ref_src=twsrc%5Etfw" class="twitter-follow-button" data-show-count="false">Follow @moegi822tw</a><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+<div id="footer-sitemap">
+ <dl>
+ 
+  <dt>架空鉄道</dt>
+  <dd>
+   <ul>
+    <li>大手私鉄</li>
+    <li>ローカル線</li>
+    <li>公営鉄道</li>
+   </ul>
+  </dd>
+  
+  <dt>空想都市</dt>
+  <dd>
+   <ul>
+   </ul>
+  </dd>
+  
+  <dt>旅行記</dt>
+  <dd>
+   <ul>
+    <li>鉄道旅</li>
+   </ul>
+  </dd>
+  
+  <dt>ツール</dt>
+  <dd>
+   <ul>
+   </ul>
+  </dd>
+  
+  <dt>リンク</dt>
+  <dd>
+   <ul>
+   </ul>
+  </dd>
+  
+ </dl>
+</div>
 
 <div>Copyright ©︎ 2025 Shikijiki Midori All rights reserved.</div>
 
