@@ -168,7 +168,7 @@ p {
 
 #top-content {
   width: 100%;
-  height: 70svh;
+  height: 80svh;
   margin: 0;
   overflow: hidden;
   position: relative;
@@ -240,12 +240,6 @@ p {
   text-align: center;
   }
 
-#footer {
-  background-color: #e9e9e9;
-  margin: 0;
-  padding: 20px;
-  }
-
 #history-list {
   background-color: #ebf1f6;
   border-radius: 30px;
@@ -301,6 +295,39 @@ p {
   border: solid 2px #fff;
   border-radius: 60px;
   vertical-align: top;
+  }
+
+/* フッター */
+#footer {
+  background-color: #e9e9e9;
+  margin: 0;
+  padding: 20px;
+  }
+  
+#footer-mainlink {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+  
+  & li {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+    
+    &::before {
+      content: "|";
+      padding: 0 3px;
+      }
+    
+    &:first-child::before {
+      content: "";
+      padding: 0;
+      }
+    
+    & a {
+      color: #0a2933;
+      }
+    }
   }
 
 /* 地図 */
