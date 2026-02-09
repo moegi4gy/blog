@@ -1,0 +1,215 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "近江鉄道本線",
+        "_color": "#000000",
+        "_opacity": 0.5,
+        "_weight": 3
+      },
+      "geometry": {
+        "type": "LineString",
+        "coordinates": [
+          [
+            136.219482,
+            35.012204
+          ],
+          [
+            136.219482,
+            35.014216
+          ],
+          [
+            136.21944,
+            35.014638
+          ],
+          [
+            136.219332,
+            35.015078
+          ],
+          [
+            136.219161,
+            35.015473
+          ],
+          [
+            136.218925,
+            35.015877
+          ],
+          [
+            136.216307,
+            35.019418
+          ],
+          [
+            136.215985,
+            35.019884
+          ],
+          [
+            136.215663,
+            35.020262
+          ],
+          [
+            136.206254,
+            35.031015
+          ],
+          [
+            136.20443,
+            35.033133
+          ],
+          [
+            136.198497,
+            35.039835
+          ],
+          [
+            136.19795,
+            35.040547
+          ],
+          [
+            136.197692,
+            35.040986
+          ],
+          [
+            136.197456,
+            35.041425
+          ],
+          [
+            136.197252,
+            35.041926
+          ],
+          [
+            136.196866,
+            35.042822
+          ],
+          [
+            136.194066,
+            35.049849
+          ],
+          [
+            136.19368,
+            35.050789
+          ],
+          [
+            136.193261,
+            35.051834
+          ],
+          [
+            136.192617,
+            35.053485
+          ],
+          [
+            136.190783,
+            35.057911
+          ],
+          [
+            136.188787,
+            35.063102
+          ],
+          [
+            136.188422,
+            35.063787
+          ],
+          [
+            136.188047,
+            35.064375
+          ],
+          [
+            136.187532,
+            35.06506
+          ]
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "日野駅",
+        "_markerType": "Icon",
+        "_iconUrl": "https://maps.gsi.go.jp/portal/sys/v4/symbols/080.png",
+        "_iconSize": [
+          20,
+          20
+        ],
+        "_iconAnchor": [
+          10,
+          10
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.219515,
+          35.012231
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "朝日野駅",
+        "_markerType": "Icon",
+        "_iconUrl": "https://maps.gsi.go.jp/portal/sys/v4/symbols/080.png",
+        "_iconSize": [
+          20,
+          20
+        ],
+        "_iconAnchor": [
+          10,
+          10
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.205846,
+          35.031507
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "朝日大塚駅",
+        "_markerType": "Icon",
+        "_iconUrl": "https://maps.gsi.go.jp/portal/sys/v4/symbols/080.png",
+        "_iconSize": [
+          20,
+          20
+        ],
+        "_iconAnchor": [
+          10,
+          10
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.193583,
+          35.051026
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "桜川駅",
+        "_markerType": "Icon",
+        "_iconUrl": "https://maps.gsi.go.jp/portal/sys/v4/symbols/080.png",
+        "_iconSize": [
+          20,
+          20
+        ],
+        "_iconAnchor": [
+          10,
+          10
+        ]
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          136.187586,
+          35.065007
+        ]
+      }
+    }
+  ]
+}
