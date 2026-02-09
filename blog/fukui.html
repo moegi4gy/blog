@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <title>	北陸新幹線開業記念の旅｜旧駅舎裏の資材置き場</title>
+ <meta charset="UTF-8">
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+ <link rel="stylesheet" href="../css/mainstyle.css" />
+ <link rel="stylesheet" href="../css/ryotei.css" />
+ <script src="../javascript/mainscript.js"></script>
+ <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <meta name="description" content="架空鉄道・架空地図のほか、旅行・交通に関する記事を掲載しています。">
+ <meta name="format-detection" content="telephone=no, email=no, address=no">
+ <meta name="theme-color" content="#0a2933">
+ <meta name="twitter:card" content="summary_large_image">
+ <meta name="twitter:url" content="https://suzuran09.jp/blog/fukui.html">
+ <meta name="twitter:title" content="北陸新幹線開業記念の旅｜旧駅舎裏の資材置き場">
+ <meta name="twitter:description" content="今までに制作した架空鉄道や空想都市についてまとめたり、あちこちと飛びまわった旅の記録をしたりしています。">
+ <meta name="twitter:image" content="../img/thumbnail/fukui.jpg">
+ <link rel="icon" href="../img/icon.jpg" sizes="342x342" type="image/jpeg" />
+ <link rel="apple-touch-icon-precomposed" href="../img/icon.jpg" />
+ <meta name="application-name" content="旧駅舎裏の資材置き場">
+ 
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+JP:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
+ 
+ <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin=""/>
+ <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+ <script src="//cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.5.1/gpx.min.js"></script>
+ 
+</head>
+
+<body>
+
+<header>
+
+<div id="top-header">
+ 
+ <a href="https://suzuran09.jp/">
+  <div id="site-title">旧駅舎裏の資材置き場</div>
+  <div>〜架空鉄道・架空地図の部屋〜</div>
+ </a>
+ 
+ <div id="hamburger-menu">
+  <label for="hamburger-display">≡</label> 
+  
+  <input id="hamburger-display" type="checkbox" name="hamburger-menu" value="hamburger-menu">
+  <ul>
+   
+   <a href="https://suzuran09.jp/railway/">
+    <li>
+     <span>架空鉄道</span>
+     <p>RAILWAY</p>
+    </li>
+   </a>
+   
+   <a href="https://suzuran09.jp/city/">
+    <li>
+     <span>空想都市</span>
+     <p>CITY</p>
+    </li>
+   </a>
+   
+   <a href="https://suzuran09.jp/blog/">
+    <li>
+     <span>旅行記</span>
+     <p>BLOG</p>
+    </li>
+   </a>
+  
+   <a href="https://suzuran09.jp/tool/">
+    <li>
+     <span>ツール</span>
+     <p>TOOL</p>
+    </li>
+   </a>
+  
+   <a href="https://suzuran09.jp/link/">
+    <li>
+     <span>リンク</span>
+     <p>LINK</p>
+    </li>
+   </a>
+   
+  </ul>
+ </div>
+</div>
+
+</header>
+
+<main>
+
+<div class="top-thumbnail">
+ <h1>北陸新幹線開業記念の旅</h1>
+ <img src="../img/thumbnail/fukui.jpg">
+ <div></div>
+</div>
+
+<ol class="breadcrumb">
+
+ <li>
+  <a href="../index.html">ホーム</a>
+ </li>
+ 
+ <li>
+  <a href="index.html">旅行記</a>
+ </li>
+ 
+ <li>北陸新幹線開業記念の旅</li>
+ 
+</ol>
+
+<div class="written-date"><img src="../img/_i_icon_12555_icon_125550.svg" width="14px">2026-02-05</div>
+
+<p class="normal">皆さんは2024年3月16日と聞いて何を思い浮かべますでしょうか。そう、「北陸新幹線 金沢〜敦賀間延伸開業」ですよね。私はその約2週間後に、賑わいを見せる福井・敦賀へと旅をしてきました。</p>
+<p class="normal">実は、この規模での一人旅は今回が初めて。ですのでハプニングが多いのですが、どうか暖かい目で見守ってあげてください。</p>
+
+<div class="container"><div id="map" class="map"></div></div>
+<script>
+  var map = L.map('map');
+  var tileLayer = L.tileLayer('https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}', {
+    attribution: "<a href='https://developers.google.com/maps/documentation' target='_blank'>Google Map</a>"
+  });
+  tileLayer.addTo(map);
+  var gpx = 'gpx/fukui.gpx';
+  new L.GPX(gpx, {
+    async: true,
+    marker_options: {
+      startIconUrl: false,
+      endIconUrl: false,
+      shadowUrl: false
+      },
+    polyline_options: {
+      color: '#3d6b99',
+      weight: 4
+      }
+    }).on('loaded', function(e) {
+  	map.fitBounds(e.target.getBounds());
+    }).addTo(map);
+</script>
+
+<div class="h2-space">
+ <h2>福井の中心へ</h2>
+ <div class="h2-line"></div>
+</div>
+
+ <div class="plan">
+   <div class="event" id="event-1">
+   <div class="event-start">
+    <span class="start-time">08:57</span>
+    <span class="start-spot">米原</span>
+   </div>
+   
+   <div class="train-info">
+    <span class="train-line">JR北陸本線 しらさぎ1号</span>
+   </div>
+   
+   <div class="event-memo">
+    <p>特急に乗るのはこの時が初めてだったかと思います。当時はあまりにも静かだなあと心の中で驚いていました。</p>
+    <p>特急初乗車かつ旅の始まりで“1号”というのは気分が上がります。</p>
+    <div class="event-image">
+     <img src="img/fukui/20260122_071834.jpg">
+    </div>
+    <p>ちなみに米原から乗る場合は偶数番の左窓側（A席）が景色がよいと聞いていましたので、その座席を選びました。でもそもそも窓がドでかいので、あまり気にしなくてもいいかもしれません。</p>
+    <p>長浜付近では琵琶湖（の雰囲気）、余呉付近では余呉湖を左手に見ることができます。</p>
+   </div>
+   
+   <div class="event-end">
+    <span class="end-time">09:27</span>
+    <span class="end-spot">敦賀</span>
+   </div> 
+  </div>
+  
+  <div class="event-memo">
+   <p>敦賀駅ではハピラインふくい×えちぜん鉄道×福井鉄道のフリーパスを買いました。</p>
+   <p>今考えるとそりゃそうだって感じなのですが、日付印を押してもらうというのを知らず、素通りしかけました。危ない。ちゃんと押してもらいましょうね。</p>
+   <div class="event-image">
+    <img src="img/fukui/20260122_072708.jpg">
+    <p>6,000枚限定のお品。</p>
+   </div>
+   <p>乗り継ぎ時間があるので、あえて敦賀駅を東口から出てみました。</p>
+   <p>東口から西口へは、敦賀駅の北側をぐるっと周ってくる必要があるんですが、敷地のまあ広いこと。なんせ名だたる特急「サンダーバード」「しらさぎ」の運行拠点ですからね。私が歩いていた時も683系電車が留まっていました。</p>
+   <div class="event-image">
+    <img src="img/fukui/20240330_093215.jpg">
+    <p>敦賀駅を東口から。</p>
+    <img src="img/fukui/20240330_094118.jpg">
+    <p>留置線は意外にも広い。</p>
+   </div>
+  </div>
+  
+  <div class="event" id="event-2">
+   <div class="event-start">
+    <span class="start-time">10:13</span>
+    <span class="start-spot">敦賀</span>
+   </div>
+   
+   <div class="train-info">
+    <span class="train-line">ハピラインふくい線</span>
+   </div>
+   
+   <div class="event-memo">
+    <p>意外にも満員でした。まあ2両でしかも春休み真っ只中ともなるとそりゃ仕方ないのですが。大半が旅行客だったような気がします。</p>
+   </div>
+   
+   <div class="event-end">
+    <span class="end-time">11:04</span>
+    <span class="end-spot">福井</span>
+   </div>
+  </div>
+  
+  <div class="event-memo">
+   <p>福井駅に到着！さすが県庁所在地駅、駅の外も中もたいそう賑わっていました。</p>
+   <p>ハピラインの混雑には懲り懲りだということで、新幹線の指定席券を取りました。</p>
+   <p>福井は恐竜大国ということで、駅の中にも外にも恐竜がいました。いつか勝山方面にも行ってみたいな。</p>
+   <div class="event-image">
+    <img src="img/fukui/20240330_111940.jpg">
+    <p>丸裸の恐竜がお出迎え。</p>
+   </div>
+  </div>
+  
+  <div class="event" id="event-3">
+   <div class="event-start">
+    <span class="start-time">11:25</span>
+    <span class="start-spot">福井</span>
+   </div>
+   
+   <div class="train-info">
+    <span class="train-line">えちぜん鉄道勝山永平寺線</span>
+   </div>
+   
+   <div class="event-end">
+    <span class="end-time">11:45</span>
+    <span class="end-spot">松岡</span>
+   </div>   
+  </div>
+  
+  <div class="event-memo">
+   <p>盛り上がっている福井駅近辺をそそくさと後にして松岡へ。</p>
+   <p>それにしてもえちぜん鉄道、雰囲気があったかくて好きです。</p>
+   <div class="event-image">
+    <img src="img/fukui/20240330_114603.jpg">
+    <img src="img/fukui/20240330_114705.jpg">
+    <p>松岡の街並み。</p>
+   </div>
+   <p>松岡公園は平野を見渡せるスポットになっています。</p>
+   <p>この日はイベントか何かをやっていたようです。</p>
+   <div class="event-image">
+    <img src="img/fukui/20240330_115855.jpg">
+    <p>松岡公園から見下ろして。</p>
+    <img src="img/fukui/20240330_122309.jpg">
+    <p>観音町駅にて。</p>
+   </div>
+  </div>
+  
+  <div class="event" id="event-4">
+   <div class="event-start">
+    <span class="start-time">12:27</span>
+    <span class="start-spot">観音町</span>
+   </div>
+   
+   <div class="train-info">
+    <span class="train-line">えちぜん鉄道勝山永平寺線</span>
+   </div>
+   
+   <div class="event-end">
+    <span class="end-time">12:42</span>
+    <span class="end-spot">福井</span>
+   </div>   
+  </div>
+  
+  <div class="event-memo">
+   <p>足羽山公園でランチ。本当はここで桜を見たいなと思っていたのですが、3月ってまだ咲かないんですね…。何なら紅葉みたいなのが見られました。</p>
+   <div class="event-image">
+    <img src="img/fukui/20240330_124531.jpg">
+    <p>福井駅を正面から。</p>
+    <img src="img/fukui/20240330_132823.jpg">
+    <p>美味しいハンバーガー。</p>
+   </div>
+   <p>足羽山は街の中にポツンと高くなっている場所で、新幹線の高架もよく見渡せます。</p>
+   <div class="event-image">
+    <img src="img/fukui/20240330_134432.jpg">
+    <img src="img/fukui/20240330_134502.jpg">
+    <p>足羽山公園を散策。</p>
+   </div>
+  </div>
+  
+  <div class="event" id="event-5">
+   <div class="event-start">
+    <span class="start-time">14:27</span>
+    <span class="start-spot">赤十字前</span>
+   </div>
+   
+   <div class="train-info">
+    <span class="train-line">福井鉄道福武線</span>
+   </div>
+   
+   <div class="event-memo">
+    <p>福井鉄道は福井城址大名町停留場でスイッチバックをします。</p>
+    <p>路面電車仕様の小さな車両を、運転士さんがスタスタ移動されていました。混雑時とかどうしてるのか気になる。</p>
+   </div>
+   
+   <div class="event-end">
+    <span class="end-time">14:42</span>
+    <span class="end-spot">福井駅</span>
+   </div>   
+  </div>
+
+  <div class="event" id="event-6">
+   <div class="event-start">
+    <span class="start-time">15:13</span>
+    <span class="start-spot">福井</span>
+   </div>
+   
+   <div class="train-info">
+    <span class="train-line">ハピラインふくい線</span>
+   </div>
+   
+   <div class="event-memo">
+   <p>午前に乗ったハピラインがあまりにも大混雑だったので、新幹線に乗ることにしました。</p>
+   <p>折角なので（？）芦原温泉から乗ることにし、その芦原温泉まではハピラインで向かったようです。文字に起こすと謎すぎるムーブだなこれ。</p>
+  </div>
+   
+   <div class="event-end">
+    <span class="end-time">15:29</span>
+    <span class="end-spot">芦原温泉</span>
+   </div>   
+  </div>
+
+  <div class="event-memo">
+   <div class="event-image">
+    <img src="img/fukui/20240330_153608.jpg">
+    <p>イベントをやってたみたいだけど既に終わってた…。こちらも相変わらず綺麗な駅舎です。</p>
+   </div>
+   <div class="event-image">
+    <img src="img/fukui/20240330_154413.jpg">
+    <p>新幹線ホームへ！</p>
+   </div>
+  </div>
+
+<div class="h2-space">
+ <h2>開業直後の新幹線に乗車！</h2>
+ <div class="h2-line"></div>
+</div>
+
+  <div class="event" id="event-7">
+   <div class="event-start">
+    <span class="start-time">15:47</span>
+    <span class="start-spot">芦原温泉</span>
+   </div>
+   
+   <div class="train-info">
+    <span class="train-line">JR北陸新幹線 はくたか563号</span>
+   </div>
+   
+   <div class="event-memo">
+    <p>さすがの新幹線。あっという間に来た道を走り抜いて見せます。割高ですが全く混雑しておらず、快適な乗車体験だったので良かったです。</p>
+    <p>こうして私の新幹線初乗車は、出来たてほやほやの北陸新幹線となったのでした。</p>
+    <p>それはそうと駅、ホーム、車内の様子を見ていてもかなり新幹線の乗客ぽい人は少なかったように思ったのですが、ハピラインほどの人気は無いのでしょうか。</p>
+   </div>
+   
+   <div class="event-end">
+    <span class="end-time">16:04</span>
+    <span class="end-spot">越前たけふ</span>
+   </div>   
+  </div>
+
+  <div class="event-memo">
+   <p>越前たけふでは併設の道の駅へ。おやつにワッフルを食べて、鯖江のレッサーパンダマスキングテープを買いました。</p>
+   <div class="event-image">
+    <img src="img/fukui/20240330_160744.jpg">
+    <img src="img/fukui/20240330_163328.jpg">
+    <p>駅一体型で便利。</p>
+   </div>
+  </div>
+
+  <div class="event" id="event-8">
+   <div class="event-start">
+    <span class="start-time">16:50</span>
+    <span class="start-spot">越前たけふ</span>
+   </div>
+   
+   <div class="train-info">
+    <span class="train-line">JR北陸新幹線 つるぎ33号</span>
+   </div>
+   
+   <div class="event-memo">
+    <p>ハピラインでトコトコ進んできた道のりをあっという間に走り抜けて見せます。ところでこの時はなぜか指定席券を買っていました。乗車時間12分なのに。</p>
+    <div class="event-image">
+     <img src="img/fukui/20240330_164858.png">
+     <p>W7系。（動画のスクショなので画質が悪い）</p>
+    </div>
+   </div>
+   
+   <div class="event-end">
+    <span class="end-time">17:02</span>
+    <span class="end-spot">敦賀</span>
+   </div>   
+  </div>
+
+<div class="h2-space">
+ <h2>夕焼けの敦賀港</h2>
+ <div class="h2-line"></div>
+</div>
+
+  <div class="event-memo">
+   <p>敦賀ではまず赤レンガ倉庫でディナーを調達して…と思っていたのですが、ここで東口から改札を出てしまうという痛恨のミス。10分くらい遠回りすることになってしまいました。</p>
+   <p>そして赤レンガ倉庫に着いた頃には17時30分を過ぎており、フードの販売は終了とのこと。仕方ないのでプリンだけ買いました。</p>
+   <div class="event-image">
+    <img src="img/fukui/20240330_174131(1).jpg">
+    <p>この中に飲食店が入っている。</p>
+   </div>
+   <p>そばの金ヶ崎緑地では、夕焼けがちょうどいい頃合いになっていました。人生で数えるほどしか海を見たことがなかったので、かなり見入っていました。</p>
+   <div class="event-image">
+    <img src="img/fukui/20240330_174540(1).jpg">
+    <img src="img/fukui/20240330_174849.jpg">
+    <p>海には夕日が似合います。</p>
+   </div>
+   <p>敦賀港にはもともと国鉄の線路が伸びていて、昔は大陸への玄関口として船と鉄道が接続していたそうです。</p>
+   <p>杉原千畝の「命のビザ」のエピソードが有名ですね。</p>
+   <div class="event-image">
+    <img src="img/fukui/20240330_175819.jpg">
+    <p>敦賀港駅（再現）。</p>
+   </div>
+   <p>ちなみにディナーはどうしたかというと、当時の私には店を選び出す能力もなく、スタバに寄ってました…。いつか敦賀らしい食べ物にリベンジしたいです。</p> 
+   <div class="event-image">
+    <img src="img/fukui/20240330_183751.jpg">
+    <p>夜の敦賀駅。</p>
+   </div>
+  </div>
+  
+  <div class="event" id="event-9">
+   <div class="event-start">
+    <span class="start-time">19:10</span>
+    <span class="start-spot">敦賀</span>
+   </div>
+   
+   <div class="train-info">
+    <span class="train-line">JR北陸本線 しらさぎ62号</span>
+   </div>
+   
+   <div class="event-memo">
+    <div class="event-image">
+     <img src="img/fukui/20260122_072118.jpg">
+     <p>なおなぜか往路と発券日が異なる。</p>
+    </div>
+   </div>
+   
+   <div class="event-end">
+    <span class="end-time">19:43</span>
+    <span class="end-spot">米原</span>
+   </div>   
+  </div>
+  
+  <div class="event-memo">
+   <p>滋賀に帰ってきました。朝から晩まで丸一日楽しみつくせて、大きなトラブルもなかったので良かったです。</p>
+   <p>この記事公開時点で既に福井に新幹線がやって来てから2年ほど経ちましたが、今行っても十分楽しめると思います。特急と新幹線を駆使して楽しんでみてはいかがでしょうか。</p>
+   <p>なお私はこの1年後にもっと規模の大きい旅をすることになります…。</p>
+  </div>
+  
+ </div>
+
+<style>
+#event-1 {
+  border-color: #1872cc;
+  }
+  
+#event-2 {
+  border-color: #ff33a0;
+  }
+
+#event-3 {
+  border-color: #ff7700;
+  }
+  
+#event-4 {
+  border-color: #ff7700;
+  }
+  
+#event-5 {
+  border-color: #008000;
+  }
+  
+#event-6 {
+  border-color: #ff33a0;
+  }
+  
+#event-7 {
+  border-color: #000066;
+  }
+  
+#event-8 {
+  border-color: #000066;
+  }
+
+#event-9 {
+  border-color: #1872cc;
+  }
+
+</style>
+
+
+</main>
+
+<footer>
+
+<div id="footer">
+
+ <ul class="sns-link">
+  
+  <a href="https://twitter.com/moegi822tw" class="twitter-link">
+   <li>
+    <span>X（Twitter）</span>
+   </li>
+  </a>
+  
+  <a href="https://www.youtube.com/@suzuran9" class="youtube-link">
+   <li>
+    <span>YouTube</span>
+   </li>
+  </a>
+  
+  <a href="https://github.com/moegi4gy" class="github-link">
+   <li>
+    <span>GitHub</span>
+   </li>
+  </a>
+  
+ </ul>
+
+ <ul class="footer-mainlink">
+
+  <li>
+   <a href="https://suzuran09.jp/sitemap/">サイトマップ</a>
+  </li>
+ 
+  <li>
+   <a href="https://suzuran09.jp/about/">このサイトについて</a>
+  </li>
+ 
+  <li>
+   <a href="https://suzuran09.jp/library/">資料室</a>
+  </li>
+ 
+ </ul>
+
+ <div class="copyright">Copyright ©︎ 2026 Suzuran All rights reserved.</div>
+
+</div>
+
+</footer>
+
+</body>
