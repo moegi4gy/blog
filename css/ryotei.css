@@ -1,0 +1,99 @@
+html {
+  font-family: 'IBM Plex Sans JP', sans-serif;
+  font-weight: 300;
+  color: #0a2933;
+  }
+
+body {
+  background-color: #fafbf9;
+  padding: 0;
+  margin: 0;
+  }
+  
+p {
+  line-height: 24px;
+  }
+
+.plan-header {
+  background-color: #e0e0e0;
+  }
+
+.plan-name {
+  font-weight: 600;
+  font-size: 24px;
+  margin: 0 8px;
+  }
+  
+.plan-date {
+  font-size: 15px;
+  margin: 0 8px;
+  }
+  
+.event {
+  margin: 15px;
+  padding-left: 10px;
+  border-left: solid 6px #000;
+  }
+  
+.start-time {
+  font-size: 15px;
+  }
+
+.start-spot {
+  font-weight: 500;
+  font-size: 18px;
+  margin-left: 5px;
+  }
+
+.train-info {
+  margin-left: 50px;
+  font-weight: 400;
+  }
+
+.train-direction {
+  color: #707070;
+  }
+  
+.train-number {
+  color: #707070;
+  font-size: 15px;
+  }
+
+.end-time {
+  font-size: 15px;
+  }
+
+.end-spot {
+  font-weight: 500;
+  font-size: 18px;
+  margin-left: 5px;
+  }
+ 
+.event-memo {
+  margin: 0 30px;
+  }
+ 
+.event .event-memo {
+  margin-left: 50px;
+  }
+  
+.event-image {
+  text-align: center;
+  
+  & summary {
+    text-align: left;
+    }
+  
+  & img {
+    width: 85%;
+    max-width: 600px;
+    }
+  
+  & p {
+    font-size: 14px;
+    color: #707070;
+    line-height: 16px;
+    margin: 0;
+    margin-bottom: 8px;
+    }
+  }
